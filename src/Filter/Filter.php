@@ -11,6 +11,7 @@
 namespace GraphAware\Reco4PHP\Filter;
 
 use GraphAware\Common\Type\NodeInterface;
+use GraphAware\Reco4PHP\Result\Recommendation;
 
 interface Filter
 {
@@ -22,5 +23,5 @@ interface Filter
      *
      * @return bool
      */
-    public function doInclude(NodeInterface $input, NodeInterface $item);
+    public function doInclude(NodeInterface $input, Recommendation $recommendation);
 }

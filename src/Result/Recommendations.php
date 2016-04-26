@@ -65,6 +65,19 @@ class Recommendations
     }
 
     /**
+     * Contrary to remove(), rm() works also _after_ sorting the recommendations
+     * @param  Recommendation $recommendation
+     */
+    public function rm(Recommendation $recommendation)
+    {
+        $key = array_search($recommendation, $this->recommendations);
+        if ($key === null) {
+            return;
+        }
+        unset($this->recommendations[$key]);
+    }
+
+    /**
      * @return \GraphAware\Reco4PHP\Result\Recommendation[]
      */
     public function getItems($size = null)
